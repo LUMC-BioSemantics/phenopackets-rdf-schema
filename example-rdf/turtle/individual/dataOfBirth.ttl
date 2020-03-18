@@ -1,0 +1,14 @@
+@prefix : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v010/example-rdf/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+:individual1 a obo:NCBITaxon_9606;
+  sio:SIO_000008 :birthDate1. # has attribute
+
+
+:birthDate1 a sio:SIO_000614; # attribute
+  sio:SIO_000332 obo:NCIT_C68615; # is about
+  sio:SIO_000300 "1993-01-01T00:15:00"^^xsd:dateTime . # has value
