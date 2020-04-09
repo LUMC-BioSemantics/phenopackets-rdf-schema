@@ -13,4 +13,3 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   dct:identifier xsd:string;
   obo:IAO_0000219 @:individualShape
 }
-
