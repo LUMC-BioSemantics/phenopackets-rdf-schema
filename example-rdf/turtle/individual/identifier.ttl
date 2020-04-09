@@ -2,14 +2,11 @@
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 
-
 :individual1 a obo:NCBITaxon_9606.
 
 :individual1_id1 a obo:NCIT_C25364; # Identifier
   dct:identifier "patient:0";
   obo:IAO_0000219 :individual1.
-
-
 
 :individual1_alt_id1 a obo:NCIT_C90353; # Alternative identifier
   dct:identifier "patient:0 alt id";
