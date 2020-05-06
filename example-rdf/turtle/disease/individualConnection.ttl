@@ -1,0 +1,11 @@
+@prefix : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v010/example-rdf/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix ordo: <http://www.orpha.net/ORDO/Orphanet_> .
+
+
+:individual1 a obo:NCBITaxon_9606;
+obo:ERO_0002100 :disease1.
+
+:disease1 a obo:ncit_C2991 ;
+sio:SIO_000300 ordo:710.
