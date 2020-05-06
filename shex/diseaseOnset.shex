@@ -1,0 +1,14 @@
+PREFIX : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v010/shex/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sio: <http://semanticscience.org/resource/>
+
+:diseaseShape IRI {
+  a [obo:NCIT_C2991];
+  sio:SIO_000008  @:diseaseOnsetShape
+}
+:diseaseOnsetShape IRI {
+  a [sio:SIO_000614];
+  sio:SIO_000332 [obo:NCIT_C25279];  
+  sio:SIO_000300 xsd:string;
+}
