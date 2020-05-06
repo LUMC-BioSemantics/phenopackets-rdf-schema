@@ -1,0 +1,11 @@
+@prefix : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v010/example-rdf/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+
+:sample1 a obo:NCIT_C43412;
+sio:SIO_000008  :sample_is_control_sample1 .
+
+:sample_is_control_sample1
+    a sio:SIO_000614; # attribute
+    sio:SIO_000332 obo:NCIT_C61299; # is about
+    sio:SIO_000300 obo:NCIT_C68850. # has value (true or false)

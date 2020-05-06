@@ -1,0 +1,6 @@
+@prefix : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v010/example-rdf/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+
+:sample1 a  obo:NCIT:C43412 ;
+sio:SIO_001403 :individual1.
