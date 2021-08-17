@@ -4,7 +4,7 @@
 @prefix sio: <http://semanticscience.org/resource/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:sample1 a obo:NCIT_C43412;
+:biosample_ a obo:OBI_0100051;
  sio:SIO_000008  :age-at_collection1 .
 
 :age-at_collection1 a sio:SIO_000614; # attribute

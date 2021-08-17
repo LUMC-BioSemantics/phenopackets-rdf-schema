@@ -4,7 +4,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 
-:individual1 a obo:NCBITaxon_9606;
+:individual1 a sio:SIO_000498;
     sio:SIO_000008 :age1.
 
 :age1 a sio:SIO_000614; # attribute

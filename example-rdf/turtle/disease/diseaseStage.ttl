@@ -2,8 +2,8 @@
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix sio: <http://semanticscience.org/resource/> .
 
-:disease1 a obo:NCIT_C2991;
- sio:SIO_000008  :diseaseStage1 .
+:individual1 a sio:SIO_000498;
+  sio:SIO_000008 :diseaseStage1. # Attribute
 
 :diseaseStage1 a sio:SIO_000614; # attribute
     sio:SIO_000332 obo:NCIT_C28108; # is about

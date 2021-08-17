@@ -2,7 +2,7 @@
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix sio: <http://semanticscience.org/resource/> .
 
-:sample1 a obo:NCIT_C43412;
+:sample1 a obo:OBI_0100051;
 sio:SIO_000008  :sample_tissue1 .
 
 :sample_tissue1

@@ -3,7 +3,7 @@
 @prefix sio: <http://semanticscience.org/resource/> .
 
 
-:individual1 a obo:NCBITaxon_9606;
+:individual1 a sio:SIO_000498;
   sio:SIO_000008 :gender1 . # has attribute
 
 :gender1 a sio:SIO_000614; # attribute
