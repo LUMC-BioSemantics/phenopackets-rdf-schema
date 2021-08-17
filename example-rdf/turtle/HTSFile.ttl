@@ -6,14 +6,14 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:sample1 a obo:OBI_0100051 ; # specimen
+:sample1 a obo:OBI_0100051. # specimen
 
 :distribution1 a dcat:Distribution;
     sio:SIO_001403 :sample1; # associated with
     dct:description "Matched normal germline sample";
-    dcat:downloadURL <https://opensnp.org/data/60.23andme-exome-vcf.231?1341012444>;
+    dcat:downloadURL <https://example.com/some-vcf>;
     dct:format <http://edamontology.org/format_3016> .
 
 :genomeAssembly1 a obo:SO_0001505;
-  sio:SIO_001403 <https://opensnp.org/data/60.23andme-exome-vcf.231?1341012444>;
+  sio:SIO_001403 <https://example.com/some-vcf>;
   rdfs:label "GRCh38" . 

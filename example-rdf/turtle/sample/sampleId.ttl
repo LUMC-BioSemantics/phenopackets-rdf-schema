@@ -4,10 +4,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-# an example rdf of sample id
 :biosample_ a obo:OBI_0100051 ; # specimen
     dcterms:description  "Description of the sample" .
 
-:biosample_id_ a a sio:SIO_000115; # type identifier
+:biosample_id_ a sio:SIO_000115; # type identifier
     sio:SIO_000020 :biosample_ ; # denotes
     sio:SIO_000300 "sample1"^^xsd:string .
