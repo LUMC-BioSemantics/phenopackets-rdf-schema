@@ -4,7 +4,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX sio: <http://semanticscience.org/resource/>
 
 :sampleShape IRI {
-  a [obo:NCIT_C43412];
+  a [obo:OBI_0100051];
   sio:SIO_000008  @:tumorProgressionShape
 }
 :tumorProgressionShape IRI {

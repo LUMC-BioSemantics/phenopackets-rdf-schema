@@ -5,7 +5,7 @@ PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX lnc: <http://purl.bioontology.org/ontology/LNC/> 
 
 :sampleShape IRI {
-  a [obo:NCIT_C43412];
+  a [obo:OBI_0100051];
   sio:SIO_000008  @:sampleTissueShape
 }
 :sampleTissueShape IRI {

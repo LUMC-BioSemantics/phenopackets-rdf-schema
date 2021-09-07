@@ -3,7 +3,7 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX sio: <http://semanticscience.org/resource/>
 
 :sampleShape IRI {
-  a [obo:NCIT_C43412];
+  a [obo:OBI_0100051];
   sio:SIO_000008  @:sampleDMShape
 }
 :sampleDMShape IRI {

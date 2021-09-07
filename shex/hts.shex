@@ -1,0 +1,30 @@
+PREFIX : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v010/shex/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX edam: <http://edamontology.org/>
+PREFIX phenordf: <http://purl.org/ejp-rd/phenopackets-rdf-schema/resources/rdf/>
+
+:sampleShape IRI {
+  a [obo:OBI_0100051]
+}
+
+:distributionShape IRI {
+  a [dcat:Distribution];
+  sio:SIO_001403 @:sampleShape;
+  dct:description xsd:string; 
+  dcat:downloadURL @:downloadShape;
+  dct:format [edam:format_2573 edam:format_2572 edam:format_3462 edam:format_3016 edam:format_3020 :gvcf edam:format_1930] # SAM, BAM, CRAM, VCF, BCF, GVCF, FASTQ	
+}
+
+:downloadShape IRI {
+}
+
+:genomeAssemblyShape IRI {
+  a [obo:SO_0001505];
+  sio:SIO_001403 @:downloadShape;
+  rdfs:label xsd:string	
+}

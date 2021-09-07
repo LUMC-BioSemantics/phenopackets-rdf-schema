@@ -3,12 +3,12 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX sio: <http://semanticscience.org/resource/>
 
-:diseaseShape IRI {
-  a [obo:NCIT_C2991];
+:individualShape IRI {
+  a [sio:SIO_000498];
   sio:SIO_000008  @:diseaseOnsetShape
 }
 :diseaseOnsetShape IRI {
   a [sio:SIO_000614];
-  sio:SIO_000332 [obo:NCIT_C25279];  
+  sio:SIO_000332 [obo:HP_0003674];  
   sio:SIO_000300 xsd:string;
 }
