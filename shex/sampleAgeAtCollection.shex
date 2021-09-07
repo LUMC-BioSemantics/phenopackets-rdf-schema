@@ -6,7 +6,7 @@ PREFIX lnc: <http://purl.bioontology.org/ontology/LNC/>
 
 :sampleShape IRI {
   a [obo:OBI_0100051];
-  sio:SIO_000008  :ageAtCollectionShape
+  sio:SIO_000008  @:ageAtCollectionShape
 }
 :ageAtCollectionShape IRI {
   a [sio:SIO_000614];
