@@ -1,6 +1,5 @@
 # LIST individuals and its attributes  
 
-PREFIX : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v010/example-rdf/>
 PREFIX sio: <http://semanticscience.org/resource/>
 
 SELECT DISTINCT ?individual ?attribute ?attribute_value {
