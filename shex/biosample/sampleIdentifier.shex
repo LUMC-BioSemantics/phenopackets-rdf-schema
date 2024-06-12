@@ -6,13 +6,13 @@ PREFIX edam: <http://edamontology.org/>
 PREFIX sio: <http://semanticscience.org/resource/>
 
 :biosampleShape IRI {
-  a [obo:OBI_0100051] ;
-  a [sio:SIO_001050] ;
+  a [obo:OBI_0100051] ; # obo:specimen
+  a [sio:SIO_001050] ; # sio:sample
   dct:description xsd:string
  }
 
 :sampleIdShape IRI{
-  a [sio:SIO_000115] ;
+  a [sio:SIO_000115] ; # sio:identifier
   sio:SIO_000020 @:biosampleShape ;
   sio:SIO_000300 xsd:string 
 }
