@@ -4,12 +4,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX lnc: <http://purl.bioontology.org/ontology/LNC/> 
 
-:sampleShape IRI {
-  a [obo:OBI_0100051];
-  sio:SIO_000008  @:ageAtCollectionShape
+:biosampleShape IRI {
+    a [obo:OBI_0100051] ;
+    a [sio:SIO_001050] ;
+    sio:SIO_000008 @:ageAtCollectionShape
 }
+
 :ageAtCollectionShape IRI {
-  a [sio:SIO_000614];
-  sio:SIO_000332 [lnc:MTHU016624];  
-  sio:SIO_000300 xsd:string;
+    a [lnc:MTHU016624] ;
+    a [sio:SIO_000614] ;
+    sio:SIO_000300 xsd:string 
 }

@@ -1,11 +1,16 @@
-@prefix : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v010/example-rdf/> .
+@prefix : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v200/example-rdf/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix sio: <http://semanticscience.org/resource/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 
+:individual_ a sio:SIO_000498, obo:NCIT_C16960 ; # sio:person obo:patient
+  sio:SIO_000008 :sex_ . # has attribute
 
-:individual1 a sio:SIO_000498;
-  sio:SIO_000008 :gender1 . # has attribute
+:sex_ a sio:SIO_000614, obo:NCIT_C46113 ; # sio:attribute obo:female (phenopackets) [in CARE-SM NCIT_C16576 which is a general qualifier attribute and the parent class of the phenopacket option]
 
-:gender1 a sio:SIO_000614; # attribute
- sio:SIO_000332 obo:NCIT_C28421; # is about
- sio:SIO_000300 obo:NCIT_C46113 .  # has value
+:sexValue_ a sio:SIO_000015, obo:NCIT_C160908 ; # sio:information-content-entity obo:sex-code
+  sio:SIO_000628 :sex_ ; # sio:refers-to
+  rdfs:label "FEMALE"^^xsd:string ;
+  dct:description "Female sex"^^xsd:string ;
+  sio:SIO_000300 "1"^^xsd:integer .  # has value

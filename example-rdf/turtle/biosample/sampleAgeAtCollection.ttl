@@ -4,9 +4,8 @@
 @prefix sio: <http://semanticscience.org/resource/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:biosample_ a obo:OBI_0100051;
- sio:SIO_000008  :age-at_collection1 .
+:biosample_ a sio:SIO_001050, obo:OBI_0100051 ;
+    sio:SIO_000008  :ageAtCollection_ .
 
-:age-at_collection1 a sio:SIO_000614; # attribute
-    sio:SIO_000332  lnc:MTHU016624; # is about
+:ageAtCollection_ a sio:SIO_000614, lnc:MTHU016624 ; # attribute
     sio:SIO_000300 "P25Y3M2D"^^xsd:string . # has value

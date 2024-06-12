@@ -5,13 +5,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX edam: <http://edamontology.org/>
 PREFIX sio: <http://semanticscience.org/resource/>
 
-:sampleShape IRI {
+:biosampleShape IRI {
   a [obo:OBI_0100051] ;
+  a [sio:SIO_001050] ;
   dct:description xsd:string
  }
 
 :sampleIdShape IRI{
-  a sio:SIO_000115 ;
-  sio:SIO_000020 @:sampleShape ;
+  a [sio:SIO_000115] ;
+  sio:SIO_000020 @:biosampleShape ;
   sio:SIO_000300 xsd:string 
 }

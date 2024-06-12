@@ -2,5 +2,5 @@
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix sio: <http://semanticscience.org/resource/> .
 
-:sample1 a  obo:NCIT_C43412 ;
-sio:SIO_001403 :individual1.
+:biosample_ a obo:NCIT_C43412 ;
+    sio:SIO_001403 :individual_ .

@@ -1,0 +1,57 @@
+PREFIX : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v200/shex/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:phenopacketShape IRI {
+  a [sio:SIO_000015] ; # sio:information-content-entity
+  a [obo:NCIT_C184388] ; # obo:participant-object
+  sio:SIO_001403 @:individualShape ; # sio:is-associated-with subject
+  sio:SIO_001403 @:phenotypicFeatureShape # sio:is-associated-with phenotypic_features
+  sio:SIO_001403 @:interpretationShape # sio:is-associated-with phenotypic_features
+}
+
+:individualShape IRI {
+  a [sio: obo:] ;
+  sio:SIO_000628 @:phenopacketShape . # sio:refers-to
+}
+
+:phenotypicFeatureShape IRI {
+  a [sio: obo:] ;
+  sio:SIO_000628 @:phenopacketShape . # sio:refers-to
+}
+
+:measurementShape IRI {
+  a [sio: obo:] ;
+  sio:SIO_000628 @:phenopacketShape . # sio:refers-to
+}
+
+:biosampleShape IRI {
+  a [sio:SIO_001050 obo:OBI_0100051] ;
+  sio:SIO_000628 @:phenopacketShape . # sio:refers-to
+}
+
+:interpretationShape IRI {
+  a [sio: obo:] ;
+  sio:SIO_000628 @:phenopacketShape . # sio:refers-to
+}
+
+:diseaseShape IRI {
+  a [sio: obo:] ;
+  sio:SIO_000628 @:phenopacketShape . # sio:refers-to
+}
+
+:medicalActionShape IRI {
+  a [sio: obo:] ;
+  sio:SIO_000628 @:phenopacketShape . # sio:refers-to
+}
+
+:fileShape IRI {
+  a [sio: obo:] ;
+  sio:SIO_000628 @:phenopacketShape . # sio:refers-to
+}
+
+:metadataShape IRI {
+  a [sio: obo:] ;
+  sio:SIO_000628 @:phenopacketShape . # sio:refers-to
+}

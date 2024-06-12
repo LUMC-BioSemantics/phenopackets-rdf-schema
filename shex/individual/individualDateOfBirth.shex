@@ -4,12 +4,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX sio: <http://semanticscience.org/resource/>
 
 :individualShape IRI {
-  a [sio:SIO_000498];
+  a [sio:SIO_000498 obo:NCIT_C16960] ;
   sio:SIO_000008 @:birthDateShape
 }
 
 :birthDateShape IRI {
-  a [sio:SIO_000614];
-  sio:SIO_000332 [obo:NCIT_C68615];
+  a [sio:SIO_000614 obo:NCIT_C68615] 
+}
+
+:birthDateValueShape IRI {
+  a [sio:SIO_000015 obo:NCIT_C70856] ;
+  sio:SIO_000628 @:birthDateShape ;
   sio:SIO_000300 xsd:dateTime
 }

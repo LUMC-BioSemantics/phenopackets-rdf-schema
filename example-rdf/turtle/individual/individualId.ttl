@@ -1,0 +1,14 @@
+@prefix : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v200/example-rdf/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:individual_ a sio:SIO_000498, obo:NCIT_C16960 ; # sio:person obo:patient
+    sio:SIO_000228 :individualRole_ . # sio:has-role
+
+:individualId_ a sio:SIO_000115, obo:IAO_0020000 ; # type sio:identifier obo:identifier
+    sio:SIO_000020 :individualRole_ ; # sio:denotes
+    sio:SIO_000300 "patient1"^^xsd:string . # sio:has-value
+
+:individualRole_ a sio:SIO_000016, obo:OBI_0000093 . # sio:role obo:patient-role
+
