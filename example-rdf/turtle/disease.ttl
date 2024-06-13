@@ -2,10 +2,21 @@
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix sio: <http://semanticscience.org/resource/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ordo: <http://www.orpha.net/ORDO/Orphanet_> .
 
 :individual1 a sio:SIO_000498;
+  sio:SIO_000008 :disease1. # Attribute
   sio:SIO_000008 :diseaseonset1. # Attribute
+  sio:SIO_000008 :diseaseStage1. # Attribute
   
+:disease1 a sio:SIO_000614 ;
+  sio:SIO_000300 ordo:710; # Value
+  sio:SIO_000332 obo:NCIT_C2991 .
+
 :diseaseonset1 a sio:SIO_000614; # attribute
     sio:SIO_000332 obo:HP_0003674; # is about
     sio:SIO_000300 "P25Y3M2D"^^xsd:string . # has value
+
+:diseaseStage1 a sio:SIO_000614; # attribute
+    sio:SIO_000332 obo:NCIT_C28108; # is about
+    sio:SIO_000300 obo:NCIT_C140963 . # has value
