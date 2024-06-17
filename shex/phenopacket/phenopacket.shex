@@ -5,23 +5,29 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :phenopacketShape IRI {
   a [sio:SIO_000015] ; # sio:information-content-entity
-  a [obo:NCIT_C184388] ; # obo:participant-object
-  sio:SIO_001403 @:individualShape ; # sio:is-associated-with subject
-  sio:SIO_001403 @:phenotypicFeatureShape # sio:is-associated-with phenotypic_features
-  sio:SIO_001403 @:interpretationShape # sio:is-associated-with phenotypic_features
+  a [obo:NCIT_C79269] ; # obo:participant-object
+  sio:SIO_001403 @:individualShape? ; # sio:is-associated-with subject
+  sio:SIO_001403 @:phenotypicFeatureShape* ; # sio:is-associated-with phenotypic_features
+  sio:SIO_001403 @:interpretationShape* ; # sio:is-associated-with interpretations
+  sio:SIO_001403 @:metadataShape . # sio:is-associated-with metadata
 }
 
 :individualShape IRI {
   a [sio:SIO_010375] ; # sio:multicellular-organism
-  a [obo:NCIT_C41189] ; # obo:study-subject
+  a [obo:NCIT_C41189] . # obo:study-subject
 }
 
 :phenotypicFeatureShape IRI {
   a [sio:SIO_000614] ; # sio:attribute
-  a [obo:HP_~] ; # URI for phenotype, e.g., HPO term URI
+  a [obo:HP_~] . # URI for phenotype, e.g., HPO term URI
 }
 
 :interpretationShape IRI {
   a [sio:SIO_001003] ; # sio:diagnostic-opinion
-  a [obo:NCIT_C41255] ; # obo:interpretation
+  a [obo:NCIT_C41255] . # obo:interpretation
+}
+
+:metadataShape IRI {
+  a [sio:SIO_001330] ; # sio:metadata
+  a [obo:NCIT_C52095] . # obo:metadata
 }
