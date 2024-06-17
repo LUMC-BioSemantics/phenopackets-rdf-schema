@@ -1,0 +1,9 @@
+@prefix : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v200/example-rdf/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+
+:phenopacket_ a sio:SIO_000015, obo:NCIT_C79269 ; # sio:information-content-entity obo:participant-object
+    sio:SIO_001403 :individual_ ; # sio:is-associated-with subject
+    sio:SIO_001403 :phenotypicFeature_ ; # sio:is-associated-with phenotypic_features
+    sio:SIO_001403 :interpretation_ ; # sio:is-associated-with interpretations
+    sio:SIO_001403 :phenopacket_metadata_ . # sio:is-associated-with metadata

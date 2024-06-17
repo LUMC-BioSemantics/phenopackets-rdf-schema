@@ -3,7 +3,7 @@
 @prefix sio: <http://semanticscience.org/resource/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:phenopacket_ a sio:SIO_000015, obo:NCIT_C184388 ; # sio:information-content-entity obo:participant-object
+:phenopacket_ a sio:SIO_000015, obo:NCIT_C79269 ; # sio:information-content-entity obo:participant-object
     sio:SIO_000228 :phenopacketRole_ . # sio:has-role
 
 :phenopacketId_ a sio:SIO_000115, obo:IAO_0020000 ; # type sio:identifier obo:identifier
