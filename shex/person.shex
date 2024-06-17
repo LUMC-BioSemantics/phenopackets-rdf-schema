@@ -1,0 +1,10 @@
+PREFIX : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v200/shex/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:personShape IRI {
+  a [sio:SIO_000498] ; # sio:person
+  a [obo:NCIT_C25190] ; # obo:person
+  sio:SIO_001403 @:individualShape . # sio:is-associated-with individual
+}
