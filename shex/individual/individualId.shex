@@ -16,6 +16,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   sio:SIO_000300 xsd:string . # sio:has-value
 }
 
+:individualAltIdShape IRI {
+  a [sio:SIO_000115] ; # sio:identifier
+  a [obo:NCIT_C90353] ; # obo:Alternate-Identifier
+  sio:SIO_000020 @:individualRoleShape ; # sio:denotes role
+  sio:SIO_000300 xsd:string . # sio:has-value
+}
+
 :individualRoleShape IRI {
   a [sio:SIO_000016] ; # sio:role
   a [obo:OBI_0000093] . # obo:role

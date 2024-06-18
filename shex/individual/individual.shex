@@ -9,13 +9,16 @@ PREFIX dct: <http://purl.org/dc/terms/>
   a [sio:SIO_010375] ; # sio:multicellular-organism 
   a [obo:NCIT_C41189] ; # obo:study-subject
   sio:SIO_000008 @:sexShape? ; # sio:has-attribute sex
-  sio:SIO_000008 @:birthDateShape? . # sio:has-attribute birthdate
+  sio:SIO_000008 @:birthDateShape? ; # sio:has-attribute birthdate
+  sio:SIO_000008 @:ageShape? ; # sio:has-attribute age
+  sio:SIO_000008 @:karyotypicSexShape? ; # sio:has-attribute karyotypic-sex
+  sio:SIO_000008 @:taxonomyShape? . # sio:has-attribute taxonomy
 }
 
 :sexShape IRI {
   a [sio:SIO_000614] ; # sio:attribute
   a [obo:NCIT_C17998] OR [obo:NCIT:C46113] OR [obo:NCIT:C46112] OR [obo:NCIT:C45908] . # options from phenopackets (pp) 'Sex' block
-  rdfs:label xsd:string? ; # pp:name
+  rdfs:label xsd:string ; # pp:name
   dct:description xsd:string? . # pp:description
 }
 
@@ -23,7 +26,7 @@ PREFIX dct: <http://purl.org/dc/terms/>
   a [sio:SIO_000015] ; # sio:ice
   a [obo:NCIT_C160908] ; # obo:sex-code
   sio:SIO_000628 @:sexShape ; # sio:refers-to
-  sio:SIO_000300 xsd:integer . # pp:ordinal
+  sio:SIO_000300 xsd:integer? . # pp:ordinal
 }
 
 :birthDateShape IRI {
@@ -34,6 +37,44 @@ PREFIX dct: <http://purl.org/dc/terms/>
 :birthDateValueShape IRI {
   a [sio:SIO_000015] ; # sio:ice
   a [obo:NCIT_C70856] ; # obo:observation-result
-  sio:SIO_000628 @:birthDateShape ;
+  sio:SIO_000628 @:birthDateShape ; # sio:refers-to
   sio:SIO_000300 xsd:dateTime . # sio:has-value
+}
+
+:ageShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C192262] . # obo:age-at-report-of-patient-encounter
+}
+
+:ageValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:NCIT_C70856] ; # obo:observation-result
+  sio:SIO_000628 @:ageShape ; # sio:refers-to
+  sio:SIO_000300 xsd:string {1,2} . # sio:has-value
+}
+
+:karyotypicSexShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C168871] ; # obo:karyotype-status
+  rdfs:label ["UNKNOWN_KARYOTYPE" "XX" "XY" "XO" "XXY" "XXX" "XXYY" "XXXY" "XXXX" "XYY" "OTHER_KARYOTYPE"] ; # pp:name
+  dct:description xsd:string? . # pp:description
+}
+
+:karyotypicSexValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:NCIT_C164609] ; # obo:sex-genotype-code
+  sio:SIO_000628 @:karyotypicSexShape ; # sio:refers-to
+  sio:SIO_000300 xsd:integer? . # pp:ordinal
+}
+
+:taxonomyShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCBITaxon_~] OR IRI ; # an OntologyClass representing the species (e.g., NCBITaxon:9615)
+  dct:identifier xsd:string ; # id
+  rdfs:label xsd:string . # label 
+}
+
+:taxonomyValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:NCIT_C164641] . # obo:Taxonomy-Identifier-Code
 }
