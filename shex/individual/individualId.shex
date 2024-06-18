@@ -25,5 +25,5 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :individualRoleShape IRI {
   a [sio:SIO_000016] ; # sio:role
-  a [obo:OBI_0000093] . # obo:role
+  a [obo:OBI_0000093] . # obo:patient-role
 }
