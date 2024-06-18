@@ -5,7 +5,9 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 
 :phenotypicFeature_ a sio:SIO_000614, obo:HP_0000252 ; # type sio:attribute obo:sign/symptom/phenotype
-    dct:description "Description of phenotypic feature" . # description
+    dct:identifier "HP:0000252" ; # id
+    rdfs:label "Microcephaly" ; # label
+    dct:description "Description of phenotypic feature" ; # description
     sio:SIO_000008 :excluded_ , 
                    :severity_ ,
                    :onset_ ,
@@ -13,16 +15,17 @@
 		   :resolution_ .
 
 :phenotypicFeatureValue_ a sio:SIO_000015, obo:NCIT_C16977 ; # sio:ICE, obo:Phenotype
-          sio:SIO_000300 "Microcephaly" ;
-	  sio:SIO_000628 :phenotypicFeature_ .
+	                 sio:SIO_000628 :phenotypicFeature_ .
 
 :excluded_ a sio:SIO_000614, obo:HP_0040285 . # sio:attribute obo:Excluded
 
 :excludedValue_ a sio:SIO_000015, obo:NCIT_C70856 ; # sio:ice obo:observation-result
-           sio:SIO_000300 "true" ;
-	   sio:SIO_000628 :excluded_ .
+                sio:SIO_000300 "true" ;
+	        sio:SIO_000628 :excluded_ .
 
-:severity_ a sio:SIO_000614, obo:HP_0012825 . # sio:attribute obo:Mild
+:severity_ a sio:SIO_000614, obo:HP_0012825 ; # sio:attribute obo:Mild
+           dct:identifier "HP:0012825" ; # id
+	   rdfs:label "Mild" . # label
 
 :severityValue_ a sio:SIO_000015, obo:HP_0012824 ; # sio:ICE obo:Severity
                 sio:SIO_000628 :severity_ .
@@ -33,13 +36,15 @@
              sio:SIO_000300 "Age or time" ;
              sio:SIO_000628 :onset_ .
 
-:modifiers_ a sio::SIO_000614, obo:HP_0410401 . # sio:attribute obo:Worse-in-evening
+:modifiers_ a sio:SIO_000614, obo:HP_0410401 ; # sio:attribute obo:Worse-in-evening
+            dct:identifier "HP:0410401" ; # id
+	    rdfs:label "Worse in evening" . # label
 
 :modifiersValue_ a sio:SIO_000015, obo:HP_0012823 ; # sio:ICE obo:Clinical-modifier
-                sio:SIO_000628 :modifiers_ .
+                 sio:SIO_000628 :modifiers_ .
 
 :resolution_ a sio:SIO_000614, obo:NCIT_C178992 . # sio:attribute obo:Symptom-resolution-date (can be another ontology class describing age of the individual) 
 
-:resolutionValue_ a sio:SIO_000015, obo:NCIT_C75906 ; # sio:ICE obo:Resolution
+:resolutionValue_ a sio:SIO_000015, obo:NCIT_C70856 ; # sio:ICE obo:observation-result
                   sio:SIO_000300 "Age or time" ;
 		  sio:SIO_000628 :resolution_ .
