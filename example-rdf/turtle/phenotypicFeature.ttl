@@ -2,6 +2,7 @@
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix sio: <http://semanticscience.org/resource/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 
 :phenotypicFeature_ a sio:SIO_000614, obo:HP_0000252 ; # type sio:attribute obo:sign/symptom/phenotype

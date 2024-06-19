@@ -3,10 +3,11 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 :phenotypicFeatureShape IRI {
   a [sio:SIO_000614] ; # type sio:attribute 
-  a [obo:HP_~] ; # type obo:HPO
+  a [obo:HP_~] ; # type obo:HPO <<RECOMMENDED ONTOLOGY: HPO>>
   dct:identifier xsd:string ; # id
   rdfs:label xsd:string ; # label
   dct:description xsd:string? ; # description
