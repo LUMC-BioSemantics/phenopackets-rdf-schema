@@ -5,5 +5,5 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 
-:biosample_ a sio:SIO_001050, obo:OBI_0100051 ; # sio:sample obo:specimen
+:biosample_ a sio:SIO_010412, obo:NCIT_C43412 ; # sio:specimen obo:biosample
     dct:description  "Description of the biosample" .

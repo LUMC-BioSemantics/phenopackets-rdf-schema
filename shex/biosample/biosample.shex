@@ -6,12 +6,14 @@ PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 :biosampleShape IRI {
-  a [sio:SIO_001050] ; # sio:sample
-  a [obo:OBI_0100051] ; # obo:specimen
+  a [sio:SIO_010412] ; # sio:specimen
+  a [obo:NCIT_C43412] ; # obo:biosample
   dct:description xsd:string? ; # description
+  rdfs:comments xsd:string? ; # comments to track additional remarks such as in BIND
   sio:SIO_001403 @:individualShape? ; # sio:is-associated-with subject
   sio:SIO_001403 @:biosampleShape? ; # sio:is-associated-with derived_from_biosample
   sio:SIO_000008 @:sampledTissueShape? ; # sio:has-attribute sampled_tissue  
+  sio:SIO_001403 @:measurementShape? ; # sio:is-associated-with measurement
   sio:SIO_000008 @:materialSampleShape? ; # sio:has-attribute material_sample 
 }
 
