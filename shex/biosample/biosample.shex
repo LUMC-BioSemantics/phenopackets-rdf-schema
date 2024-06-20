@@ -21,7 +21,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
   a [sio:SIO_000614] ; # sio:attribute 
   a [obo:UBERON_~] ; # obo: <<RECOMMENDED ONTOLOGY: UBERON>>
   dct:identifiers xsd:string ; # id
-  rdfs:label xsd:string .
+  rdfs:label xsd:string . # label
 }
 
 :sampledTissueValueShape IRI {
@@ -34,7 +34,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
   a [sio:SIO_000614] ; # sio:attribute 
   a [obo:~] OR IRI ; # obo: Ontology class such as EFO classes to represent Status of specimen (tumor tissue, normal control, etc.), e.g., in BIND we have NCIT_C184729 (Untreated). 
   dct:identifiers xsd:string ; # id
-  rdfs:label xsd:string .
+  rdfs:label xsd:string . # label
 }
 
 :materialSampleValueShape IRI {

@@ -3,7 +3,6 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-
 :interpretationShape IRI {
   a [sio:SIO_001003] ; # sio:diagnostic-opinion
   a [obo:NCIT_C41255] ; # obo:interpretation

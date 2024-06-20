@@ -3,10 +3,9 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-
-:interpretationShape IRI {
-  a [sio:SIO_001003] ; # sio:diagnostic-opinion
-  a [obo:NCIT_C41255] ; # obo:interpretation
-  sio:SIO_SIO_000008 @:progressStatusShape ; # sio:has-attribute progress_status
-  sio:SIO_001403 @:diagnosisShape? . # sio:is-associated-with diagnosis
+:variationShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C3910] ; # obo:Molecular-Abnormality
+  sio:SIO_SIO_000008 @:Shape ; # sio:has-attribute 
+  sio:SIO_001403 @:Shape . # sio:is-associated-with 
 }
