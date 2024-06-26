@@ -4,7 +4,7 @@ PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :genomicInterpretationShape IRI {
-  a [sio:] ; # sio:attribute
+  a [sio:SIO_000614] ; # sio:attribute
   a [obo:SO_0001026] ; # obo:genome
   sio:SIO_001403 [@:individualShape @:biosampleShape] ; # sio:is-associated-with subject or biosample
   sio:SIO_000008 @:interpretationStatusShape ; # sio:has-attribute interpretation_status
