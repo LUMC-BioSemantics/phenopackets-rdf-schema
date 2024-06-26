@@ -6,20 +6,20 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-:variantDescriptorShape IRI {
+:variationDescriptorShape IRI {
   a [sio:SIO_000015] ; # sio:ice
-  a [obo:NCIT_C97927] ; # obo:gene-variant
-  sio:SIO_001403 @:variationShape . # sio:is-associated-with variation
+  a [obo:NCIT_C97927] ; # obo:gene-variant; NB: it could be one of the following: [NCIT:Gene, NCIT:Gene-variant, NCIT:Protein, NCIT:mRNA, NCIT:tRNA, NCIT:miRNA] such as in CARE-SM::Genetic_assessment::Genetic_target
+  sio:SIO_001403 @:variationShape? ; # sio:is-associated-with variation
   rdfs:label xsd:string? ; # label
   dct:description xsd:string? ; # description 
-  sio:SIO_001403 @:Shape ; # sio:is-associated-with gene_context
-  sio:SIO_001403 @:Shape ; # sio:is-associated-with expressions
-  sio:SIO_001403 @:Shape ; # sio:is-associated-with vcf_record
-  rdfs:seeAlso xsd:string ; # xrefs
-  skos:altLabel xsd:string ; # alternate_labels
-  sio:SIO_001403 @:Shape . # sio:is-associated-with extensions
-  sio:SIO_SIO_000008 @:Shape ; # sio:has-attribute molecule_context
-  sio:SIO_SIO_000008 @:Shape ; # sio:has-attribute structural_type
-  sio:SIO_SIO_000008 @:Shape ; # sio:has-attribute vrs_ref_allele_seq
-  sio:SIO_SIO_000008 @:Shape . # sio:has-attribute allelic_state
+  sio:SIO_001403 @:geneDescriptorShape? ; # sio:is-associated-with gene_context
+  sio:SIO_001403 @:expressionShape* ; # sio:is-associated-with expressions
+  sio:SIO_001403 @:vcfRecordShape? ; # sio:is-associated-with vcf_record
+  rdfs:seeAlso IRI* ; # xrefs
+  skos:altLabel xsd:string* ; # alternate_labels
+  sio:SIO_001403 @:extensionShape* . # sio:is-associated-with extensions
+  sio:SIO_SIO_000008 @:moleculeContextShape ; # sio:has-attribute molecule_context
+  sio:SIO_SIO_000008 @:structuralTypeShape? ; # sio:has-attribute structural_type
+  sio:SIO_SIO_000008 @:vrsRefAlleleSeqShape? ; # sio:has-attribute vrs_ref_allele_seq
+  sio:SIO_SIO_000008 @:allelicStateShape? . # sio:has-attribute allelic_state
 }
