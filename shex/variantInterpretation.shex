@@ -8,7 +8,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   a [obo:SO_0001060] ; # obo:sequence_variant
   sio:SIO_000008 @:acmgPathogenicityShape ; # sio:has-attribute acmg_pathogenicity_classification
   sio:SIO_000008 @:therapeuticActionabilityShape ; # sio:has-attribute therapeutic_actionability
-  sio:SIO_001403 @:variantDescriptorShape . # sio:is-associated-with variant_descriptor
+  sio:SIO_001403 @:variationDescriptorShape . # sio:is-associated-with variant_descriptor
 }
  
 :acmgPathogenicityShape IRI {
