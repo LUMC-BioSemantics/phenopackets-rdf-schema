@@ -4,22 +4,34 @@ PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :variantInterpretationShape IRI {
-  a [sio:] ; # sio:attribute
+  a [sio:SIO_000614] ; # sio:attribute
   a [obo:SO_0001060] ; # obo:sequence_variant
-  sio:SIO_000008 @:Shape ; # sio:has-attribute acmg_pathogenicity_classification
-  sio:SIO_000008 @:Shape ; # sio:has-attribute therapeutic_actionability
-  sio:SIO_001403 @:variantDescriptorShape . # sio:is-associated-with variant_descriptor
+  sio:SIO_000008 @:acmgPathogenicityShape ; # sio:has-attribute acmg_pathogenicity_classification
+  sio:SIO_000008 @:therapeuticActionabilityShape ; # sio:has-attribute therapeutic_actionability
+  sio:SIO_001403 @:variationDescriptorShape . # sio:is-associated-with variant_descriptor
 }
  
-:Shape IRI {
+:acmgPathogenicityShape IRI {
   a [sio:SIO_000614] ; # sio:attribute
-  a [obo:] . # obo:status
+  a [obo:NCIT_C168796] . # obo:pathogenicity
 }
 
-:ValueShape IRI {
+:acmgPathogenicityValueShape IRI {
   a [sio:SIO_000015] ; # sio:ice
-  a [obo:] ; # obo:observation-result
-  sio:SIO_000628 @:Shape ; # sio:refers-to
-  sio:SIO_000300 ["" ] . # pp:name
+  a [obo:NCIT_C70856] ; # obo:observation-result
+  sio:SIO_000628 @:acmgPathogenicityShape ; # sio:refers-to
+  sio:SIO_000300 ["NOT_PROVIDED" "BENIGN" "LIKELY_BENIGN" "UNCERTAIN_SIGNIFICANCE" "LIKELY_PATHOGENIC" "PATHOGENIC"] . # pp:name
+}
+
+:therapeuticActionabilityShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C25277] . # obo:therapeutic
+}
+
+:therapeuticActionabilityValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:NCIT_C70856] ; # obo:observation-result
+  sio:SIO_000628 @:therapeuticActionabilityShape ; # sio:refers-to
+  sio:SIO_000300 ["UNKNOWN_ACTIONABILITY" "NOT_ACTIONABLE" "ACTIONABLE"] . # pp:name
 }
 
