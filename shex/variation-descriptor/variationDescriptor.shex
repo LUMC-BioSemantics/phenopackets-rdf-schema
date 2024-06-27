@@ -18,8 +18,127 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
   rdfs:seeAlso IRI* ; # xrefs
   skos:altLabel xsd:string* ; # alternate_labels
   sio:SIO_001403 @:extensionShape* . # sio:is-associated-with extensions
-  sio:SIO_SIO_000008 @:moleculeContextShape ; # sio:has-attribute molecule_context
-  sio:SIO_SIO_000008 @:structuralTypeShape? ; # sio:has-attribute structural_type
-  sio:SIO_SIO_000008 @:vrsRefAlleleSeqShape? ; # sio:has-attribute vrs_ref_allele_seq
-  sio:SIO_SIO_000008 @:allelicStateShape? . # sio:has-attribute allelic_state
+  sio:SIO_000008 @:moleculeContextShape ; # sio:has-attribute molecule_context
+  sio:SIO_000008 @:structuralTypeShape? ; # sio:has-attribute structural_type
+  sio:SIO_000008 @:vrsRefAlleleSeqShape? ; # sio:has-attribute vrs_ref_allele_seq
+  sio:SIO_000008 @:allelicStateShape? . # sio:has-attribute allelic_state
 }
+
+:expressionShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:~] OR IRI ; # obo class it refers to syntax, e.g., [NCIT_C198546 (HGVS code), NCIT_C43706 (OMIM number), NCIT_C100094 (HGNC ID), NCIT_C173278 (iscn)] 
+  rdfs:label xsd:string ; # syntax
+  sio:SIO_000300 xsd:string ; # sio:has-value HGVS_code value
+  dct:hasVersion xsd:string? ; # version
+  sio:SIO_000628 @:allelicStateShape . # sio:refers-to zygosity
+}
+
+:extensionShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C182346] ; # obo:extension-comment
+  rdfs:label xsd:string ; # name for the extension
+  sio:SIO_000300 xsd:string . # sio:has-value a string representation of the user-defined object.
+}
+
+:moleculeContextShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C63816] . # obo:molecule
+}
+
+:moleculeContextValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:NCIT_C70856] ; # obo:Observation-Result
+  sio:SIO_000300 ["unspecified_molecule_context" "genomic" "transcript" "protein"] ; # sio:has-value
+  sio:SIO_000628 @:moleculeContextShape . # sio:refers-to
+}
+
+:structuralTypeShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:~] or IRI . # RECOMMENDED an obo class descendent term of SO:0001537
+}
+
+:vrsRefAlleleSeqShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:GENO_0000036] . # obo:reference-allele
+}
+
+:vrsRefAlleleSeqValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:GENEPIO_0100604] ; # obo:reference-sequence
+  sio:SIO_000300 xsd:string ; # sio:has-value  
+  sio:SIO_000628 @:vrsRefAlleleSeqShape . # sio:refers-to
+}
+
+:allelicStateShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:GENO_~] . # obo class from GENO representing zygosity
+}
+
+:vcfRecordShape IRI {
+  a [sio:SIO_000396] ; # sio:file
+  a [obo:NCIT_C172216] ; # obo:VCF-format
+  dct:identifier xsd:string? ; # id
+  sio:SIO_000008 @:genomeAssemblyShape ; # sio:has-attribute genome_assembly
+  sio:SIO_000008 @:chromosomeShape ; # sio:has-attribute chromosome
+  sio:SIO_000008 @:positionShape ; # sio:has-attribute reference_position
+  sio:SIO_000008 @:referenceShape ; # sio:has-attribute reference_base
+  sio:SIO_000008 @:alternateShape ; # sio:has-attribute alternate_base
+  sio:SIO_000008 @:qualityShape? ; # sio:has-attribute quality
+  sio:SIO_000008 @:filterShape? ; # sio:has-attribute filter
+  rdfs:comments xsd:string? . # info
+}
+
+:genomeAssemblyShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C73517] ; # obo:Genome-Assembly-Sequence
+  dct:identifier xsd:string . # Identifier for the genome assembly used
+}
+
+:chromosomeShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C13202] ; # obo:Chromosome
+  dct:identifier xsd:string . # Chromosome ID
+}
+
+:positionShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C93628] ; # obo:position-number
+  rdfs:label xsd:integer . # sio:has-value the reference position number
+}
+
+:referenceShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C48294] ; # obo:reference
+  rdfs:label xsd:string . # sio:has-value reference_base
+}
+
+:alternateShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C25415] ; # obo:alternative
+  rdfs:label xsd:string . # sio:has-value alternate_base
+}
+
+:qualityShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C142491] . # obo:Data-Quality
+}
+
+:qualityValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:GENEPIO_0000089] ; # obo:phred-quality-score
+  sio:SIO_000300 xsd:string ; # sio:has-value
+  sio:SIO_000628 @:qualityShape . # sio:refers-to
+}
+
+:filterShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C41199] . # obo:filter
+}
+
+:filterValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:] ; # obo:observation-result
+  sio:SIO_000300 ["PASS"] OR xsd:string ; # sio:has-value
+  sio:SIO_000628 @:filterShape . # sio:refers-to
+}
+
