@@ -1,0 +1,17 @@
+PREFIX : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v200/shex/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+:treatmentShape IRI { # CARE-SM medication
+  a [sio:SIO_000090] ; # sio:specification
+  a [obo:NCIT_C73537] ; # obo:specification
+  sio:SIO_000008 @:agentShape ; # sio:has-attribute agent
+  sio:SIO_000008 @:routeOfAdministrationShape ; # sio:has-attribute route_of_admin
+  sio:SIO_000008 @:doseIntervalsShape ; # sio:has-attribute dose_intervals
+  sio:SIO_000008 @:drugTypeShape ; # sio:has-attribute drug_type
+  sio:SIO_000008 @:cumulativeDoseShape . # sio:has-attribute cumulative_dose
+}

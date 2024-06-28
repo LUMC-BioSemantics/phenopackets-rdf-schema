@@ -8,7 +8,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   a [obo:NCIT_C79269] ; # obo:participant-object
   sio:SIO_001403 @:individualShape? ; # sio:is-associated-with subject
   sio:SIO_001403 @:phenotypicFeatureShape* ; # sio:is-associated-with phenotypic_features
+  sio:SIO_001403 @:biosampleShape* ; # sio:is-associated-with biosample
   sio:SIO_001403 @:interpretationShape* ; # sio:is-associated-with interpretations
+  sio:SIO_001403 @:medicalActionShape* ; # sio:is-associated-with medical_action
   sio:SIO_001403 @:metadataShape . # sio:is-associated-with metadata
 }
 
@@ -22,9 +24,19 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   a [obo:HP_~] . # URI for phenotype, e.g., HPO term URI
 }
 
+:biosampleShape IRI {
+  a [sio:SIO_010412] ; # sio:specimen
+  a [obo:NCIT_C43412] . # obo:biosample
+}
+
 :interpretationShape IRI {
   a [sio:SIO_001003] ; # sio:diagnostic-opinion
   a [obo:NCIT_C41255] . # obo:interpretation
+}
+
+:medicalActionShape IRI {
+  a [sio:SIO_001398] ; # sio:medical-intervention
+  a [obo:NCIT_C25218] . # obo:Intervention-or-procedure
 }
 
 :metadataShape IRI {
