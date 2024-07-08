@@ -47,7 +47,7 @@ PREFIX loinc: <https://loinc.org/rdf/>
 
 :referenceRangeValueShape IRI {
   a [sio:SIO_000015] ; # sio:ice
-  a [obo:] ; # obo:Observation-Result
+  a [obo:NCIT_C70856] ; # obo:Observation-Result
   sio:SIO_000628 @:referenceRangeShape ; # sio:refers-to
   sio:SIO_000221 @:unitShape ; # sio:has-unit
   sio:SIO_000300 xsd:double {1,2} . # sio:has-value 
