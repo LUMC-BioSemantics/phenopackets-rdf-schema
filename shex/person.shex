@@ -6,5 +6,56 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :personShape IRI {
   a [sio:SIO_000498] ; # sio:person
   a [obo:NCIT_C25190] ; # obo:person
-  sio:SIO_001403 @:individualShape . # sio:is-associated-with individual
+  sio:SIO_001403 @:familyShape ; # sio:is-associated-with family
+  sio:SIO_001403 @:individualShape ; # sio:is-associated-with individual
+  sio:SIO_000008 @:motherShape ; # sio:has-attribute mother
+  sio:SIO_000008 @:fatherShape ; # sio:has-attribute father
+  sio:SIO_000008 @:sexShape ; # sio:has-attribute sex
+  sio:SIO_000008 @:affectedStatusShape  # sio:has-attribute affected_status
+}
+
+:motherShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C25189] . # obo:mother
+}
+
+:motherIndividualShape IRI {
+  a [sio:SIO_010375] ; # sio:multicellular-organism 
+  a [obo:NCIT_C41189] ; # obo:study-subject
+  sio:SIO_000228 @:individualRoleShape ; # sio:has-role role
+  sio:SIO_000628 @:motherShape . # sio:refers-to
+}
+
+:individualIdShape IRI {
+  sio:SIO_000020 @:individualRoleShape ; # sio:denotes role
+  sio:SIO_000300 xsd:string . # sio:has-value
+}
+
+:individualRoleShape IRI {
+  a [sio:SIO_000016] ; # sio:role
+  a [obo:OBI_0000093] . # obo:patient-role
+}
+
+:fatherShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C25174] . # obo:father
+}
+
+:fatherIndividualShape IRI {
+  a [sio:SIO_010375] ; # sio:multicellular-organism
+  a [obo:NCIT_C41189] ; # obo:study-subject
+  sio:SIO_000228 @:individualRoleShape ; # sio:has-role role
+  sio:SIO_000628 @:fatherShape . # sio:refers-to
+}
+
+:affectedStatusShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C64917] . # obo:affected
+}
+
+:affectedStatusValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:NCIT_C70856] ; # obo:observation-result
+  sio:SIO_000628 @:affectedStatusShape ; # sio:refers-to
+  sio:SIO_000300 ["MISSING" "UNAFFECTED" "AFFECTED"] . # sio:has-value
 }
