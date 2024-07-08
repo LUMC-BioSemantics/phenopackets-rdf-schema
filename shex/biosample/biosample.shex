@@ -15,6 +15,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
   sio:SIO_000008 @:sampledTissueShape? ; # sio:has-attribute sampled_tissue  
   sio:SIO_001403 @:measurementShape? ; # sio:is-associated-with measurement
   sio:SIO_000008 @:materialSampleShape? ; # sio:has-attribute material_sample 
+  sio:SIO_000008 @:sampleProcessingShape? ; # sio:has-attribute sample_processing
 }
 
 :sampledTissueShape IRI {
@@ -43,3 +44,15 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
   sio:SIO_000628 @:materialSampleShape . # sio:refers-to
 }
  
+:sampleProcessingShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:~] OR IRI ; # obo: Ontology class on how the specimen was processed
+  dct:identifiers xsd:string ; # id
+  rdfs:label xsd:string . # label
+}
+
+:sampleProcessingValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:NCIT_C179746] ; # obo:Biospecimen-Preparation
+  sio:SIO_000628 @:sampleProcessingShape . # sio:refers-to
+}

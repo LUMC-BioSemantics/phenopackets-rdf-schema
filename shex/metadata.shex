@@ -2,8 +2,18 @@ PREFIX : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v200/shex/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 :metadataShape IRI {
   a [sio:SIO_001330] ; # sio:metadata
-  a [obo:NCIT_C52095] . # obo:metadata
+  a [obo:NCIT_C52095] ; # obo:metadata
+  dct:created LITERAL ; # created
+  dct:creator LITERAL OR IRI ; # created_by
+  sio:SIO_001403 @:resourceShape+ ; # sio:is-associated-with resources
+  dct:hasVersion xsd:string ; # phenopacket_schema_version
+  dct:publisher LITERAL OR IRI? ; # submitted_by
+  sio:SIO_001403 @:updateShape* ; # sio:is-associated-with updates
+  rdfs:seeAlso IRI* # external_references
+  #sio:SIO_001403 @:metadataFDPShape  # sio:is-associated-with FDP dcat:resource
 }

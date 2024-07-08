@@ -12,6 +12,7 @@ PREFIX dct: <http://purl.org/dc/terms/>
   sio:SIO_000008 @:birthDateShape? ; # sio:has-attribute birthdate
   sio:SIO_000008 @:ageShape? ; # sio:has-attribute age
   sio:SIO_000008 @:karyotypicSexShape? ; # sio:has-attribute karyotypic-sex
+  sio:SIO_000008 @:genotypeShape? ;  # sio:has-attribute genotype or strain
   sio:SIO_000008 @:taxonomyShape? . # sio:has-attribute taxonomy
 }
 
@@ -63,6 +64,18 @@ PREFIX dct: <http://purl.org/dc/terms/>
   sio:SIO_000300 ["UNKNOWN_KARYOTYPE" "XX" "XY" "XO" "XXY" "XXX" "XXYY" "XXXY" "XXXX" "XYY" "OTHER_KARYOTYPE"] . # pp:name
 }
 
+:genotypeShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C16631] . # obo:genotype
+}
+
+:genotypeValueShape IRI {
+  a [sio:SIO_001079] ; # sio:genotype (information-content-entity)
+  a [obo:NCIT_C70856] ; # obo:observation-result
+  sio:SIO_000628 @:genotypeShape ; # sio:refers-to
+  sio:SIO_000300 xsd:string . # sio:has-value 
+}
+
 :taxonomyShape IRI {
   a [sio:SIO_000614] ; # sio:attribute
   a [obo:NCBITaxon_~] OR IRI ; # an OntologyClass representing the species (e.g., NCBITaxon:9615)
@@ -72,5 +85,6 @@ PREFIX dct: <http://purl.org/dc/terms/>
 
 :taxonomyValueShape IRI {
   a [sio:SIO_000015] ; # sio:ice
-  a [obo:NCIT_C164641] . # obo:Taxonomy-Identifier-Code
+  a [obo:NCIT_C164641] ; # obo:Taxonomy-Identifier-Code
+  sio:SIO_000628 @:taxonomyShape . # sio:refers-to 
 }
