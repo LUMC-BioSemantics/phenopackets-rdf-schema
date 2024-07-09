@@ -4,6 +4,7 @@ PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dct: <http://purl.org/dc/terms/> 
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX efo: <http://www.ebi.ac.uk/efo/>
 
 :vitalStatusShape IRI {
   a [sio:SIO_000614] ; # sio:attribute
