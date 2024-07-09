@@ -8,7 +8,7 @@
 
 :individualId_ a sio:SIO_000115, obo:IAO_0020000 ; # type sio:identifier obo:identifier
     sio:SIO_000020 :individualRole_ ; # sio:denotes
-    sio:SIO_000300 "P0007507"^^xsd:string . # sio:has-value
+    sio:SIO_000300 "patient:0"^^xsd:string . # sio:has-value
 
 :individualRole_ a sio:SIO_000016, obo:OBI_0000093 . # sio:role obo:patient-role
 
