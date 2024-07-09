@@ -1,0 +1,49 @@
+PREFIX : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v200/shex/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:familyShape IRI {
+  a [sio:SIO_001063] ; # sio:family
+  a [obo:NCIT_C25173] ; # obo:family
+  sio:SIO_000008 @:probandShape ; # # sio:has-attribute proband
+  sio:SIO_000008 @:relativeShape* ; # sio:has-attribute relatives
+  sio:SIO_000008 @:consanguinousParentsShape? ; # sio:has-attribute consanguinous_parents
+  sio:SIO_001403 @:pedigreeShape ; # sio:is-associated-with pedigree 
+  sio:SIO_001403 @:fileShape* ; # sio:is-associated-with files
+  sio:SIO_001403 @:metadataShape # sio:is-associated-with metadata
+}
+
+:probandShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C64435] . # obo:Proband
+}
+
+:probandPhenopacketShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:NCIT_C79269] ; # obo:participant-object
+  sio:SIO_000628 @:probandShape . # sio:refers-to
+}
+
+:relativeShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C71384] . # obo:Biological-Relative
+}
+
+:relativePhenopacketShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:NCIT_C79269] ; # obo:participant-object
+  sio:SIO_000628 @:relativeShape . # sio:refers-to
+}
+
+:consanguinousParentsShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C189764] . # obo:Consanguineous-Offspring
+}
+
+:consanguinousParentsValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:NCIT_C70856] ; # obo:Observation-Result
+  sio:SIO_000628 @:consanguinousParentsShape ; # sio:refers-to
+  sio:SIO_000300 xsd:boolean # sio:has-value  
+}
