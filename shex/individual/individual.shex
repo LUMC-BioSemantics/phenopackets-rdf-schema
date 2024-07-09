@@ -3,22 +3,22 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dct: <http://purl.org/dc/terms/> 
-
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :individualShape IRI {
   a [sio:SIO_010375] ; # sio:multicellular-organism 
   a [obo:NCIT_C41189] ; # obo:study-subject
-  sio:SIO_000008 @:sexShape? ; # sio:has-attribute sex
   sio:SIO_000008 @:birthDateShape? ; # sio:has-attribute birthdate
-  sio:SIO_000008 @:ageShape? ; # sio:has-attribute age
+  sio:SIO_000008 @:ageShape? ; # sio:has-attribute time-at-last-encounter
+  sio:SIO_000008 @:sexShape? ; # sio:has-attribute sex
   sio:SIO_000008 @:karyotypicSexShape? ; # sio:has-attribute karyotypic-sex
-  sio:SIO_000008 @:genotypeShape? ;  # sio:has-attribute genotype or strain
-  sio:SIO_000008 @:taxonomyShape? . # sio:has-attribute taxonomy
+  sio:SIO_000008 @:taxonomyShape? ; # sio:has-attribute taxonomy
+  sio:SIO_000008 @:genotypeShape? .  # sio:has-attribute [genotype or strain], NB this is NOT implemented in phenopackets schema neither v1 nor v2. It comes from the BIND FAIRification need.
 }
 
 :sexShape IRI {
   a [sio:SIO_000614] ; # sio:attribute
-  a [obo:NCIT_C17998] OR [obo:NCIT:C46113] OR [obo:NCIT:C46112] OR [obo:NCIT:C45908] . # options from phenopackets (pp) 'Sex' block
+  a [obo:NCIT_C17998] OR [obo:NCIT:C46113] OR [obo:NCIT:C46112] OR [obo:NCIT:C45908] ; # options from phenopackets (pp) 'Sex' block
   rdfs:label xsd:string . # pp:name
 }
 

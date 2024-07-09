@@ -6,7 +6,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :variationShape IRI { # RDF entity that is the VRS variation object
   a [sio:SIO_000614] ; # sio:attribute
   a [obo:NCIT_C3910] ; # obo:Molecular-Abnormality, e.g., Allele
-  sio:SIO_SIO_000008 @:locationShape ; # sio:has-attribute location
-  sio:SIO_SIO_000008 @:stateShape ; # sio:has-attribute state
+  sio:SIO_000008 @:locationShape ; # sio:has-attribute location
+  sio:SIO_000008 @:stateShape ; # sio:has-attribute state
   sio:SIO_001403 @:haplotypeShape . # sio:is-associated-with haplotype
 }
