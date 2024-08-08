@@ -22,11 +22,13 @@
   sh:targetClass obo:IAO_0020000 ; 
   sh:property [
      sh:path sio:SIO_000020
+     sh:minCount 1 ;
      sh:maxCount 1 ; 
      sh:node @:biosampleRoleShape ;
   ] ;
   sh:property [
   sh:path sio:SIO_000300 ;
+  sh:minCount 1 ;
   sh:maxCount 1 ;
   sh:datatype xsd:string ;
   ] .
