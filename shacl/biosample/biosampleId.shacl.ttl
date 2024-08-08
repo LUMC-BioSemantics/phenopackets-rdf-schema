@@ -13,8 +13,8 @@
      sh:path sio:SIO_000228 ;
      sh:name "has role" ; 
      sh:minCount 1 ;
-     sh:class sio:SIO_000016 ;
-     sh:nodeKind sh:IRI ;
+     sh:maxCount 1 ;
+     sh:node @:biosampleRoleShape ;
   ] .
 
 :biosampleIdShape 
