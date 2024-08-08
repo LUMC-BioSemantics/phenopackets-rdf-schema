@@ -18,5 +18,5 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :biosampleRoleShape IRI {
   a [sio:SIO_000016] ; # sio:role
-  a [obo:OBI_0000740] ; # obo:material-sample-role
+  a [obo:OBI_0000740] . # obo:material-sample-role
 }
