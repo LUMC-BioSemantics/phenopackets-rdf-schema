@@ -13,7 +13,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
   sio:SIO_001403 @:individualShape? ; # sio:is-associated-with subject
   sio:SIO_001403 @:biosampleShape? ; # sio:is-associated-with derived_from_biosample
   sio:SIO_000008 @:sampledTissueShape? ; # sio:has-attribute sampled_tissue  
-  sio:SIO_001403 @:measurementShape? ; # sio:is-associated-with measurement
+  sio:SIO_001403 @:measurementShape* ; # sio:is-associated-with measurement
   sio:SIO_000008 @:materialSampleShape? ; # sio:has-attribute material_sample 
   sio:SIO_000008 @:sampleProcessingShape? ; # sio:has-attribute sample_processing
 }
