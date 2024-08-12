@@ -7,8 +7,8 @@
 
 :biosampleShape 
   a sh:NodeShape ;
-  sh:targetClass sio:SIO_001050 ;
-  sh:targetClass obo:OBI_0100051 ;
+  sh:targetClass sio:SIO_010412 ;
+  sh:targetClass obo:NCIT_C43412 ;
   sh:property [
      sh:path sio:SIO_000228 ;
      sh:name "has role" ; 
