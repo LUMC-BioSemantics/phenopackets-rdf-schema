@@ -1,0 +1,20 @@
+prefixes:
+  base: http://rdf.biosemantics.org/resources/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  sio: http://semanticscience.org/resource/
+  obo: http://purl.obolibrary.org/obo/
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+mappings:
+  biosampleId:
+    sources:
+      - [phenopacket.json~jsonpath, "$.phenopacket[*].biosample[*]"]
+    s: base:$(biosample_id)
+    po:
+      - [a, sio:SIO_000115]
+      - [a, obo:IAO_0020000]
+      - [sio:SIO_000020, base:$(biosampleRole_iri)]
+      - p: sio:SIO_000300
+        o: 
+         value: $(biosample_id)
+         datatype: xsd:string

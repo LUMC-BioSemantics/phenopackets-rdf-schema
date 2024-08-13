@@ -1,11 +1,12 @@
 PREFIX : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v200/shex/>
-PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :biosampleShape IRI {
-  a [sio:SIO_001050] ; # sio:sample
-  a [obo:OBI_0100051] ; # obo:specimen
+  a [sio:SIO_010412] ; # sio:specimen
+  a [obo:NCIT_C43412] ; # obo:biosample
   sio:SIO_000228 @:biosampleRoleShape . # sio:has-role
  }
 
