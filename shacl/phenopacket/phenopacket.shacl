@@ -1,0 +1,104 @@
+@base <http://purl.org/ejp-rd/phenopackets-rdf-schema/v200/shacl/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:phenopacketShape 
+  a sh:NodeShape ;
+  sh:targetClass sio:SIO_000015 ;
+  sh:targetClass obo:NCIT_C79269 ;
+  sh:nodeKind sh:IRI ;
+  sh:property [
+     sh:path sio:SIO_001403 ;
+     sh:name "is associated with" ; 
+     sh:maxCount 1 ;
+     sh:node @:individualShape ;
+  ] ;
+  sh:property [
+     sh:path sio:SIO_001403 ;
+     sh:name "is associated with" ; 
+     sh:node @:phenotypicFeatureShape ;
+  ] ; 
+  sh:property [
+     sh:path sio:SIO_001403 ;
+     sh:name "is associated with" ;
+     sh:node @:measurementShape ;
+  ] ;
+  sh:property [
+     sh:path sio:SIO_001403 ;
+     sh:name "is associated with" ;
+     sh:node @:biosampleShape ;
+  ] ;
+  sh:property [
+     sh:path sio:SIO_001403 ;
+     sh:name "is associated with" ;
+     sh:node @:interpretationShape ;
+  ] ;
+  sh:property [
+     sh:path sio:SIO_001403 ;
+     sh:name "is associated with" ;
+     sh:node @:medicalActionShape ;
+  ] ;
+  sh:property [
+     sh:path sio:SIO_001403 ;
+     sh:name "is associated with" ;
+     sh:node @:fileShape ;
+  ] ;
+  sh:property [
+     sh:path sio:SIO_001403 ;
+     sh:name "is associated with" ;
+     sh:minCount 1 ;
+     sh:maxCount 1 ;
+     sh:node @:metadataShape ;
+  ] .
+  
+:individualShape
+  a sh:NodeShape ;
+  sh:targetClass sio:SIO_010375 ;
+  sh:targetClass obo:NCIT_C41189 ;
+  sh:nodeKind sh:IRI .
+
+:phenotypicFeatureShape
+  a sh:NodeShape ;
+  sh:targetClass sio:SIO_000614 ;
+  sh:targetClass obo:HP_+ ;
+  sh:nodeKind sh:IRI .
+
+:measurementShape
+  a sh:NodeShape ;
+  sh:targetClass sio:SIO_000070 ;
+  sh:targetClass obo:NCIT_C25209 ;
+  sh:nodeKind sh:IRI .
+
+:biosampleShape
+  a sh:NodeShape ;
+  sh:targetClass sio:SIO_010412 ;
+  sh:targetClass obo:NCIT_C43412 ;
+  sh:nodeKind sh:IRI .
+
+:interpretationShape
+  a sh:NodeShape ;
+  sh:targetClass sio:SIO_001003 ;
+  sh:targetClass obo:NCIT_C41255 ;
+  sh:nodeKind sh:IRI .
+
+:medicalActionShape
+  a sh:NodeShape ;
+  sh:targetClass sio:SIO_001398 ;
+  sh:targetClass obo:NCIT_C25218 ;
+  sh:nodeKind sh:IRI .
+
+:fileShape
+  a sh:NodeShape ;
+  sh:targetClass sio:SIO_000396 ;
+  sh:targetClass obo:NCIT_C42883 ;
+  sh:nodeKind sh:IRI .
+
+:metadataShape
+  a sh:NodeShape ;
+  sh:targetClass sio:SIO_001330 ;
+  sh:targetClass obo:NCIT_C52095 ;
+  sh:nodeKind sh:IRI .
+
