@@ -4,26 +4,12 @@
 @prefix sio: <http://semanticscience.org/resource/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-:biosampleShape 
+:phenopacketShape 
   a sh:NodeShape ;
-  sh:targetClass sio:SIO_010412 ;
-  sh:targetClass obo:NCIT_C43412 ;
+  sh:targetClass sio:SIO_000015 ;
+  sh:targetClass obo:NCIT_C79269 ;
   sh:nodeKind sh:IRI ;
-  sh:property [
-     sh:path dct:description ;
-     sh:name "Description" ;
-     sh:maxCount 1 ;
-     sh:datatype xsd:string ;
-  ] ;  
-  sh:property [
-     sh:path rdfs:comment ;
-     sh:name "comment" ;
-     sh:maxCount 1 ;
-     sh:datatype xsd:string ;
-  ] ;    
   sh:property [
      sh:path sio:SIO_001403 ;
      sh:name "is associated with" ; 
@@ -32,130 +18,87 @@
   ] ;
   sh:property [
      sh:path sio:SIO_001403 ;
-     sh:name "is associated with" ;
-     sh:maxCount 1 ;
-     sh:node @:biosampleShape ;
-  ] ;  
-  sh:property [
-     sh:path sio:SIO_000008 ;
-     sh:name "has attribute" ;
-     sh:maxCount 1 ;
-     sh:node @:sampledTissueShape ;
-  ] ;  
+     sh:name "is associated with" ; 
+     sh:node @:phenotypicFeatureShape ;
+  ] ; 
   sh:property [
      sh:path sio:SIO_001403 ;
      sh:name "is associated with" ;
      sh:node @:measurementShape ;
-  ] ;  
+  ] ;
   sh:property [
-     sh:path sio:SIO_000008 ;
-     sh:name "has attribute" ;
-     sh:maxCount 1 ;
-     sh:node @:materialSampleShape ;
-  ] ;  
+     sh:path sio:SIO_001403 ;
+     sh:name "is associated with" ;
+     sh:node @:biosampleShape ;
+  ] ;
   sh:property [
-     sh:path sio:SIO_000008 ;
-     sh:name "has attribute" ;
+     sh:path sio:SIO_001403 ;
+     sh:name "is associated with" ;
+     sh:node @:interpretationShape ;
+  ] ;
+  sh:property [
+     sh:path sio:SIO_001403 ;
+     sh:name "is associated with" ;
+     sh:node @:medicalActionShape ;
+  ] ;
+  sh:property [
+     sh:path sio:SIO_001403 ;
+     sh:name "is associated with" ;
+     sh:node @:fileShape ;
+  ] ;
+  sh:property [
+     sh:path sio:SIO_001403 ;
+     sh:name "is associated with" ;
+     sh:minCount 1 ;
      sh:maxCount 1 ;
-     sh:node @:sampleProcessingShape ;
-  ] .  
+     sh:node @:metadataShape ;
+  ] .
   
-:sampledTissueShape
+:individualShape
+  a sh:NodeShape ;
+  sh:targetClass sio:SIO_010375 ;
+  sh:targetClass obo:NCIT_C41189 ;
+  sh:nodeKind sh:IRI .
+
+:phenotypicFeatureShape
   a sh:NodeShape ;
   sh:targetClass sio:SIO_000614 ;
-  sh:targetClass obo:UBERON_+ ;
-  sh:nodeKind sh:IRI ;
-  sh:property [
-     sh:path dct:identifier ;
-     sh:name "Identifier" ;
-     sh:minCount 1 ;
-     sh:maxCount 1 ; 
-     sh:datatype xsd:string ;
-  ] ;   
-  sh:property [
-     sh:path rdfs:label ;
-     sh:name "label" ;
-     sh:minCount 1 ;
-     sh:maxCount 1 ; 
-     sh:datatype xsd:string ;
-  ] .
+  sh:targetClass obo:HP_+ ;
+  sh:nodeKind sh:IRI .
 
-:sampledTissueValueShape
+:measurementShape
   a sh:NodeShape ;
-  sh:targetClass sio:SIO_000015 ;
-  sh:targetClass obo:NCIT_C164617 ;
-  sh:nodeKind sh:IRI ;
-  sh:property [
-     sh:path sio:SIO_000628 ;
-     sh:name "refers to" ;
-     sh:minCount 1 ;
-     sh:maxCount 1 ;
-     sh:node @:sampledTissueShape ;
-  ] .
+  sh:targetClass sio:SIO_000070 ;
+  sh:targetClass obo:NCIT_C25209 ;
+  sh:nodeKind sh:IRI .
 
-:materialSampleShape
+:biosampleShape
   a sh:NodeShape ;
-  sh:targetClass sio:SIO_000614 ;
-  sh:targetClass [obo:+ sh:IRI] ;
-  sh:nodeKind sh:IRI ;
-  sh:property [
-     sh:path dct:identifier ;
-     sh:name "Identifier" ;
-     sh:minCount 1 ;
-     sh:maxCount 1 ;
-     sh:datatype xsd:string ;
-  ] ;
-  sh:property [
-     sh:path rdfs:label ;
-     sh:name "label" ;
-     sh:minCount 1 ;
-     sh:maxCount 1 ;
-     sh:datatype xsd:string ;
-  ] .
+  sh:targetClass sio:SIO_010412 ;
+  sh:targetClass obo:NCIT_C43412 ;
+  sh:nodeKind sh:IRI .
 
-:materialSampleValueShape
+:interpretationShape
   a sh:NodeShape ;
-  sh:targetClass sio:SIO_000015 ;
-  sh:targetClass obo:NCIT_C164628 ;
-  sh:nodeKind sh:IRI ;
-  sh:property [
-     sh:path sio:SIO_000628 ;
-     sh:name "refers to" ;
-     sh:minCount 1 ;
-     sh:maxCount 1 ;
-     sh:node @:materialSampleShape ;
-  ] .
+  sh:targetClass sio:SIO_001003 ;
+  sh:targetClass obo:NCIT_C41255 ;
+  sh:nodeKind sh:IRI .
 
-:sampleProcessingShape
+:medicalActionShape
   a sh:NodeShape ;
-  sh:targetClass sio:SIO_000614 ;
-  sh:targetClass [obo:+ sh:IRI] ;
-  sh:nodeKind sh:IRI ;
-  sh:property [
-     sh:path dct:identifier ;
-     sh:name "Identifier" ;
-     sh:minCount 1 ;
-     sh:maxCount 1 ;
-     sh:datatype xsd:string ;
-  ] ;
-  sh:property [
-     sh:path rdfs:label ;
-     sh:name "label" ;
-     sh:minCount 1 ;
-     sh:maxCount 1 ;
-     sh:datatype xsd:string ;
-  ] .
+  sh:targetClass sio:SIO_001398 ;
+  sh:targetClass obo:NCIT_C25218 ;
+  sh:nodeKind sh:IRI .
 
-:sampleProcessingValueShape
+:fileShape
   a sh:NodeShape ;
-  sh:targetClass sio:SIO_000015 ;
-  sh:targetClass obo:NCIT_C179746 ;
-  sh:nodeKind sh:IRI ;
-  sh:property [
-     sh:path sio:SIO_000628 ;
-     sh:name "refers to" ;
-     sh:minCount 1 ;
-     sh:maxCount 1 ;
-     sh:node @:sampleProcessingShape ;
-  ] .
+  sh:targetClass sio:SIO_000396 ;
+  sh:targetClass obo:NCIT_C42883 ;
+  sh:nodeKind sh:IRI .
+
+:metadataShape
+  a sh:NodeShape ;
+  sh:targetClass sio:SIO_001330 ;
+  sh:targetClass obo:NCIT_C52095 ;
+  sh:nodeKind sh:IRI .
 
