@@ -1,0 +1,22 @@
+@prefix : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v200/example-rdf/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+:individual_ a sio:SIO_010375, obo:NCIT_C41189 ; # sio:multicellular-organism obo:study-subject
+  sio:SIO_000008 :sex_ ; # sio:has-attribute sex
+  sio:SIO_000008 :birthDate_ . # has attribute birthdate
+
+:sex_ a sio:SIO_000614, obo:NCIT_C46112 ; # sio:attribute obo:female (phenopackets) [in CARE-SM NCIT_C16576 which is a general qualifier attribute and the parent class of the phenopacket option]
+  rdfs:label "MALE"^^xsd:string . # phenopackets:name
+
+:sexValue_ a sio:SIO_000015, obo:NCIT_C160908 ; # sio:information-content-entity obo:sex-code
+  sio:SIO_000628 :sex_ . # sio:refers-to
+
+:birthDate_ a sio:SIO_000614, obo:NCIT_C68615 . # sio:attribute obo:birth_date
+
+:birthDateValue_ a sio:SIO_000015, obo:NCIT_C70856 ; # sio:information-content-entity obo:Observation-Result
+  sio:SIO_000628 :birthDate_ ; # refers-to
+  sio:SIO_000300 "2012-01-01T00:00:00Z"^^xsd:dateTime . # has value

@@ -1,0 +1,25 @@
+PREFIX : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v200/shex/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+:interpretationShape IRI {
+  a [sio:SIO_001003] ; # sio:diagnostic-opinion
+  a [obo:NCIT_C41255] ; # obo:interpretation
+  rdfs:comments xsd:string? ; # summary
+  sio:SIO_SIO_000008 @:progressStatusShape ; # sio:has-attribute progress_status
+  sio:SIO_001403 @:diagnosisShape? . # sio:is-associated-with diagnosis
+}
+
+:progressStatusShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C25630] . # obo:progress
+}
+
+:progressStatusValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:NCIT_C70856] ; # obo:observation-result
+  sio:SIO_000628 @:progressStatusShape ; # sio:refers-to
+  sio:SIO_000300 ["UNKNOWN_PROGRESS" "IN_PROGRESS" "COMPLETED" "SOLVED" "UNSOLVED"] . # sio:has-value
+}

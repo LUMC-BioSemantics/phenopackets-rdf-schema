@@ -1,0 +1,18 @@
+PREFIX : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v010/shex/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX sio: <http://semanticscience.org/resource/> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:diseaseShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:~ ordo:~] OR IRI ; # term <<RECOMMENDED ONTOLOGIES: ORDO or obo ontologies such as MONDO, NCIT (NCIT:Undiagnosed)>>
+  dct:identifiers xsd:string ; # id
+  rdfs:label xsd:string . # label
+}
+
+:diseaseValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:NCIT_C2991] ; # obo:Disease-disorder
+  sio:SIO_000628 @:diseaseShape . # sio:refers-to
+}
+

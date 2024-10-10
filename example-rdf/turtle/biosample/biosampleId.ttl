@@ -1,0 +1,13 @@
+@prefix : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v200/example-rdf/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:biosample_ a sio:SIO_010412, obo:NCIT_C43412 ; # sio:specimen obo:biosample
+    sio:SIO_000228 :biosampleRole_ . # sio:has-role 
+
+:biosampleId_ a sio:SIO_000115, obo:IAO_0020000 ; # type sio:identifier obo:identifier
+    sio:SIO_000020 :biosampleRole_ ; # sio:denotes 
+    sio:SIO_000300 "sample1"^^xsd:string . # sio:has-value
+
+:biosampleRole_ a sio:SIO_000016, obo:OBI_0000740 . # sio:role obo:material-sample-role

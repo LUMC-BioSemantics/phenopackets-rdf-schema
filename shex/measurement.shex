@@ -1,0 +1,73 @@
+PREFIX : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v200/shex/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX loinc: <https://loinc.org/rdf/>
+
+:measurementShape IRI {
+  a [sio:SIO_000070] ; # sio:measurement-value
+  a [obo:NCIT_C25209] ; # obo:measurement
+  dct:description xsd:string? ; # description
+  rdfs:comments xsd:string? ; # comments to track additional remarks such as in BIND
+  sio:SIO_000008 @:assayShape ; # sio:has-attribute assay 
+  sio:SIO_000008 @:measurementValueShape ; # sio:has-attribute measurement_value 
+  sio:SIO_000008 @:measurementTimeShape? ; # sio:has-attribute time_observed 
+  sio:SIO_001403 @:procedureShape? . # sio:is-associated-with procedure
+}
+
+:assayShape IRI {
+  a [sio:SIO_000006] ; # sio:process
+  a [obo:NCIT_C25294 loinc:~ obo:~] OR IRI ; # obo:lab-procedure (EJP-RD/CARE-SM) or RECOMMENDED a LOINC or obo ontology class that describes the assay used to produce the measurement. 
+  dct:identifier xsd:string ; # id
+  rdfs:label xsd:string . # label
+}
+
+:measurementValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:NCIT_C70856] ; # obo:Observation-Result
+  sio:SIO_000221 @:unitShape? ; # sio:has-unit
+  sio:SIO_000300 xsd:double? ; # sio:has-value
+  sio:SIO_000008 @:referenceRangeShape? ; # sio:has-attribute
+  sio:SIO_000628 @:measurementAttributeShape . # sio:refers-to
+}
+
+:unitShape IRI {
+  a [sio:SIO_000074] ; # sio:unit-of-measurement
+  a [obo:UO_~] OR IRI ; # <<RECOMMENDED ONTOLOGY: UO>>
+  dct:identifier xsd:string ; # id
+  rdfs:label xsd:string . # label
+}
+
+:referenceRangeShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C71474] . # obo:Reference Range
+}
+
+:referenceRangeValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:NCIT_C70856] ; # obo:Observation-Result
+  sio:SIO_000628 @:referenceRangeShape ; # sio:refers-to
+  sio:SIO_000221 @:unitShape ; # sio:has-unit
+  sio:SIO_000300 xsd:double {1,2} . # sio:has-value 
+}
+
+:measurementAttributeShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:~] OR IRI ; # RECOMMENDED obo Ontology class to represent an attribute of the measurement such as "NCIT:C25626" (Present)
+  dct:identifier xsd:string ; # id
+  rdfs:label xsd:string . # label
+}
+
+:measurementTimeShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C82577] . # obo:test-time
+}
+
+:measurementTimeValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:NCIT_C70856] ; # obo:Observation-Result
+  sio:SIO_000628 @:measurementTimeShape ; # sio:refers-to
+  sio:SIO_000300 xsd:string {1,2} . # sio:has-value
+}

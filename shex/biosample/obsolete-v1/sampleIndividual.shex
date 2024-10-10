@@ -1,0 +1,11 @@
+PREFIX : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v010/shex/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX sio: <http://semanticscience.org/resource/> 
+
+:biosampleShape IRI {
+  a [obo:NCIT_C43412] ;
+  sio:SIO_001403 @:individualIdShape
+ }
+
+:individualIdShape IRI {
+}

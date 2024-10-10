@@ -1,0 +1,25 @@
+PREFIX : <http://purl.org/ejp-rd/phenopackets-rdf-schema/v200/shex/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:genomicInterpretationShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:SO_0001026] ; # obo:genome
+  sio:SIO_001403 [@:individualShape @:biosampleShape] ; # sio:is-associated-with subject or biosample
+  sio:SIO_000008 @:interpretationStatusShape ; # sio:has-attribute interpretation_status
+  sio:SIO_001403 [@:geneDescriptorShape @:variantInterpretationShape] . # sio:is-associated-with gene or variant
+}
+ 
+:interpretationStatusShape IRI {
+  a [sio:SIO_000614] ; # sio:attribute
+  a [obo:NCIT_C164628] . # obo:status
+}
+
+:interpretationStatusValueShape IRI {
+  a [sio:SIO_000015] ; # sio:ice
+  a [obo:NCIT_C70856] ; # obo:observation-result
+  sio:SIO_000628 @:interpretationStatusShape ; # sio:refers-to
+  sio:SIO_000300 ["UNKNOWN_STATUS" "REJECTED" "CANDIDATE" "CONTRIBUTORY" "CAUSATIVE"] . # pp:name
+}
+
